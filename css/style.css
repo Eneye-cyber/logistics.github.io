@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 html {  scroll-behavior: smooth;}
 body {
@@ -99,7 +100,7 @@ nav .container{  padding: 8px 20px;}
   align-self: flex-end;
   margin-right: -15px;
 }
-
+.nav-toggle, .mobile-overlay{display: none;}
 /* ul{
   display: flex;
 } */
@@ -399,6 +400,16 @@ button a.btn{
 .img-medium img{
   width: 100%;
 }
+/* Blog */
+.blog .col-2 h3{font-size: 1.5em; font-weight: 400;}
+.blog .col-2 p{
+  line-height: 1.7;
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: rgba(0,0,0,0.5);
+  margin-bottom: 1em;
+}
+.blog .col-2 span{color: rgba(0,0,0,0.5);}
 /* contact */
 section.contact{
   background-color: var(--light);
@@ -480,17 +491,21 @@ hr{  margin-bottom: 30px;}
 .text-center{  text-align: center;}
 .link-blue{color: var(--primary);font-size: 1.1em;}
 .nav-toggle{display: none;}
+.col-3 .img-small{height: auto;}
+.col-4 h2{overflow-y: hidden;}
 
 /* On screens that are 600px or less, set the background color to olive */
 @media screen and (max-width: 520px) {
   .desktop-display-only{display: none;}
   header a, header a i {    margin-left: 0;}
+  .section-text .container p {width: 100%;}
   nav{padding: 10px 0;}
   .nav-link{display: none;}
   .nav-toggle{display: inline-block;}
   .nav-toggle a{color: #000,padding:3rem 0;}
   .nav-toggle a{font-size: 1.35em;font-weight: 500;}
   .mobile-overlay{
+    display: block;
     position: fixed;
     background: rgba(0,0,0,0.38);
     width: 100%;
@@ -528,7 +543,9 @@ hr{  margin-bottom: 30px;}
   .hero-text h1 .block{display: inline-block;}
   .hero-text h1{font-size: 2.2em;}  .hero-text p{font-size: 1.08em;}
   .hero-text h1, .hero-text p {font-weight: 400;}
+  .hero-text h1{margin-top: 0;}
   form {    margin-top: 35px;}
+  .tracker{margin-bottom: 1em;}
   .section-text .container h2{font-size: 2rem;}
   .portfolio .flex, .service-section .flex, .about-2 .flex, .testimonial .flex, .blog .flex{flex-wrap: nowrap;}
   .portfolio .col-3{flex: 0 0 100%; margin-right: 20px;}
@@ -548,11 +565,10 @@ hr{  margin-bottom: 30px;}
     line-height: 1.7;
     font-weight: 400;
     font-size: 1.1rem;
-    color: rgba(0,0,0,0.38);
+    color: rgba(0,0,0,0.5);
     margin-bottom: 1em;
   }
   .type1{flex: 0 0 100%;}
-
   .contact-btn{width: 100%;} .footer-col-3{flex: 0 0 100%;}
   footer .subscribe{width: 335px;}
 }
